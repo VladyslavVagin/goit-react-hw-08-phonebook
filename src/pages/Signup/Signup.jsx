@@ -1,7 +1,8 @@
 import { Formik, Form, Field } from 'formik';
 import css from './Signup.module.css';
 import * as yup from 'yup';
-import { useRegisterUserMutation } from '../../redux/auth/authAPI';
+import { register } from '../../redux/auth/operations';
+import { useDispatch } from 'react-redux';
 
 const initialValues = {
   name: '',
@@ -16,18 +17,19 @@ const schema = yup.object().shape({
 });
 
 const Signup = () => {
-const [registerUser] = useRegisterUserMutation();
+  const dispatch = useDispatch();
 
-  const handleSubmit = dataForm => {
-    console.log(dataForm);
-    registerUser(dataForm);
+  const handleSubmitRegistration = (dataForm, {resetForm}) => {
+      console.log(dataForm);
+      dispatch(register(dataForm));
+      resetForm();
   };
 
   return (
     <div>
       <Formik
         initialValues={initialValues}
-        onSubmit={handleSubmit}
+        onSubmit={handleSubmitRegistration}
         validationSchema={schema}
       >
         <Form className={css.formSignup}>
