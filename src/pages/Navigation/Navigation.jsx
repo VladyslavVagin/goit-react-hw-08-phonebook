@@ -1,8 +1,10 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
 import { NavList, Header } from './Navigation.styled';
-import { Suspense } from "react";
+import { Suspense } from 'react';
 import styled from 'styled-components';
+import UserMenu from '../../components/UserMenu/UserMenu';
+import { useAuth } from '../../hooks/useAuth';
 
 const StyledLink = styled(NavLink)`
   text-decoration: none;
@@ -20,26 +22,29 @@ const StyledLink = styled(NavLink)`
 `;
 
 const Navigation = () => {
+  const { isLoggedIn } = useAuth();
+
   return (
     <div>
       <Header>
         <nav>
-          <NavList>
-            <li>
-              <StyledLink to={'/signup'}>Register</StyledLink>
-            </li>
-            <li>
-              <StyledLink to={'/login'}>Login</StyledLink>
-            </li>
-            <li>
-              <StyledLink to={'/contacts'}>Contacts</StyledLink>
-            </li>
-          </NavList>
+          {isLoggedIn ? (
+            <UserMenu />
+          ) : (
+            <NavList>
+              <li>
+                <StyledLink to={'/signup'}>Register</StyledLink>
+              </li>
+              <li>
+                <StyledLink to={'/login'}>Login</StyledLink>
+              </li>
+            </NavList>
+          )}
         </nav>
       </Header>
       <main>
-        <Suspense fallback={<Loader/>}>
-        <Outlet />
+        <Suspense fallback={<Loader />}>
+          <Outlet />
         </Suspense>
       </main>
     </div>
