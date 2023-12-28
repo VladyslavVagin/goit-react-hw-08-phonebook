@@ -1,36 +1,24 @@
-import AddContactForm from './AddContactForm/AddContactForm';
-import ListOfContacts from './ListOfContacts/ListOfContacts';
-import Filter from './Filter/Filter';
-import { ToastContainer } from 'react-toastify';
-import { useGetContactsQuery } from '../redux/contactsAPI';
+import { Routes, Route } from 'react-router-dom';
 import Loader from './Loader/Loader';
+import { lazy, Suspense } from "react";
+
+const Signup = lazy(() => import('pages/Signup/Signup'));
+const Login = lazy(() => import('pages/Login/Login'));
+const Navigation = lazy(() => import('pages/Navigation/Navigation'));
+const Contacts = lazy(() => import('pages/Contacts/Contacts'));
 
 export const App = () => {
-  const { data, isSuccess, isLoading, isError } = useGetContactsQuery();
-
   return (
-    <div className="container">
-      <h1>Phonebook</h1>
-      <AddContactForm data={data} />
-      {isLoading && <Loader />}
-      {!isLoading && !isError && data.length !== 0 && <h2>Contacts</h2>}
-      {!isLoading && !isError && data.length !== 0 && <Filter />}
-      {!isLoading && !isError && data.length !== 0 && (
-        <ListOfContacts data={data} isSuccess={isSuccess} />
-      )}
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover={false}
-        theme="dark"
-        style={{width: 200, marginLeft: 'auto'}}
-      />
-    </div>
+    <>
+    <Suspense fallback={<Loader/>}>
+    <Routes>
+      <Route path='/' element={<Navigation />}>
+        <Route path='/signup' element={<Signup/>} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/contacts' element={<Contacts />} />
+      </Route>
+    </Routes>
+    </Suspense>
+</>   
   );
 };
