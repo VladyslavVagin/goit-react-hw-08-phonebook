@@ -17,3 +17,8 @@ export const Header = styled.header`
   padding: 20px 54px 20px 20px;
   margin: 20px auto;
 `;
+
+export const WrapperApp = styled.div`
+  max-width: 780px;
+  margin: 0 auto;
+`

@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import Loader from '../../components/Loader/Loader';
-import { NavList, Header } from './Navigation.styled';
+import { NavList, Header, WrapperApp } from './Navigation.styled';
 import { Suspense } from 'react';
 import styled from 'styled-components';
 import UserMenu from '../../components/UserMenu/UserMenu';
@@ -18,14 +18,18 @@ const StyledLink = styled(NavLink)`
   transition: all 400ms ease;
   &:hover {
     color: #ffffff;
+  };
+  &.active {
+    color: #ffffff;
   }
+
 `;
 
 const Navigation = () => {
   const { isLoggedIn } = useAuth();
 
   return (
-    <div>
+    <WrapperApp>
       <Header>
         <nav>
           {isLoggedIn ? (
@@ -47,7 +51,7 @@ const Navigation = () => {
           <Outlet />
         </Suspense>
       </main>
-    </div>
+    </WrapperApp>
   );
 };
 

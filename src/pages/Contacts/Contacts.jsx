@@ -10,7 +10,6 @@ const Contacts = () => {
     const { data, isSuccess, isLoading, isError } = useGetContactsQuery();
   return (
     <div className="container">
-    <h1>Phonebook</h1>
     <AddContactForm data={data} />
     {isLoading && <Loader />}
     {!isLoading && !isError && data.length !== 0 && <h2>Contacts</h2>}
