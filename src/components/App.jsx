@@ -1,9 +1,11 @@
 import AddContactForm from './AddContactForm/AddContactForm';
-import ListOfContacts from './ListOfContacts/ListOfContacts';
+import { lazy } from 'react';
 import Filter from './Filter/Filter';
 import { ToastContainer } from 'react-toastify';
 import { useGetContactsQuery } from '../redux/contactsAPI';
 import Loader from './Loader/Loader';
+
+const ListOfContacts = lazy(() => import('components/ListOfContacts/ListOfContacts'));
 
 export const App = () => {
   const { data, isSuccess, isLoading, isError } = useGetContactsQuery();
