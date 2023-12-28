@@ -1,6 +1,6 @@
 import trashIcon from '../../icons/trash.png';
 import css from './Contact.module.css';
-import { useDeleteContactMutation } from '../../redux/contactsAPI';
+import { useDeleteContactMutation } from '../../redux/contacts/contactsAPI';
 import Loader from 'components/Loader/Loader';
 
 const Contact = ({ contact }) => {

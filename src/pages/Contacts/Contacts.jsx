@@ -3,7 +3,7 @@ import Filter from "../../components/Filter/Filter"
 import ListOfContacts from "../../components/ListOfContacts/ListOfContacts"
 import Loader from "../../components/Loader/Loader"
 import { ToastContainer } from 'react-toastify';
-import { useGetContactsQuery } from '../../redux/contactsAPI';
+import { useGetContactsQuery } from '../../redux/contacts/contactsAPI';
 
 
 const Contacts = () => {

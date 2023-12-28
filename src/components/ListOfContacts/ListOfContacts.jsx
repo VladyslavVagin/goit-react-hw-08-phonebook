@@ -1,6 +1,6 @@
 import css from './ListOfContacts.module.css';
 import Contact from '../Contact/Contact';
-import { selectQuery } from '../../redux/selectors';
+import { selectQuery } from '../../redux/contacts/selectors';
 import { useSelector } from 'react-redux';
 
 const ListOfContacts = ({data, isSuccess}) => {

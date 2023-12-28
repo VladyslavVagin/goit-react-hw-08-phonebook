@@ -3,7 +3,7 @@ import * as yup from 'yup';
 import css from './AddContactForm.module.css';
 import 'react-toastify/dist/ReactToastify.css';
 import { toast } from 'react-toastify';
-import { useAddContactMutation } from '../../redux/contactsAPI';
+import { useAddContactMutation } from '../../redux/contacts/contactsAPI';
 import Loader from 'components/Loader/Loader';
 
 const initialValues = {
