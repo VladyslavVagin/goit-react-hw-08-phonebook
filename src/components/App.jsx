@@ -8,6 +8,8 @@ import Loader from './Loader/Loader';
 export const App = () => {
   const { data, isSuccess, isLoading, isError } = useGetContactsQuery();
 
+
+  
   return (
     <div className="container">
       <h1>Phonebook</h1>
