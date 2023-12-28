@@ -1,0 +1,54 @@
+.deleteBtn {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 4px 6px;
+    touch-action: manipulation;
+    transition: all 400ms ease;
+    user-select: none;
+    -webkit-user-select: none;
+    vertical-align: middle;
+    border-radius: 175px;
+    background: linear-gradient(145deg, #fbf6f6, #d4cfcf);
+    box-shadow: 5px 5px 13px #7d7a7a;
+    border: none;
+  }
+  
+  .deleteBtn:hover,
+  .deleteBtn:focus {
+    transform: scale(1.1);
+  }
+  .tr {
+    text-align: center;
+    color: #313030;
+  }
+
+  .phone {
+    font-size: 0.75rem;
+    min-width: 100px;
+    padding: 12px 6px;
+    font-family: sans-serif;
+    letter-spacing: 0.02em;
+  }
+  .name {
+    font-weight: 700;
+    font-size: 0.875rem;
+    padding: 12px 6px;
+    font-family: sans-serif;
+  }
+  .delete {
+    max-width: 40px;
+  }
+  
+  @media screen and (max-width: 370px) {
+    .phone {
+      font-size: 0.625rem;
+      min-width: 80px;
+    }
+    .name {
+      font-size: 0.75rem;
+      min-width: 80px;
+    }
+}

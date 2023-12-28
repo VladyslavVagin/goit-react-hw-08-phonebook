@@ -1,0 +1,43 @@
+
+.tableContainer {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.table {
+  width: 100%;
+  padding: 10px 20px;
+  color: #d4cfcf;
+  border-spacing: 2px 10px;
+}
+
+.th {
+  background-color: #7d7a7a;
+  padding: 4px 10px;
+  color: #7d7a7a;
+  border-radius: 0px;
+  background: linear-gradient(145deg, #f0f0f0, #cacaca);
+  box-shadow: 5px 5px 9px #949494, -5px -5px 9px #ffffff;
+}
+
+.tr {
+  text-align: center;
+  color: #313030;
+}
+
+.tbody {
+  background-color: #d8d6d6;
+  padding: 16px 0;
+  border-radius: 0px;
+  background: #e0e0e0;
+  box-shadow: inset 5px 5px 3px #cacaca, inset -5px -5px 3px #f6f6f6;
+}
+
+@media screen and (max-width: 370px) {
+  .td {
+    font-size: 12px;
+  }
+  .th {
+    padding: 8px;
+  }
+}
