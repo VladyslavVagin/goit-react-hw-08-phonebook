@@ -12,11 +12,12 @@ export const App = () => {
     <>
     <Suspense fallback={<Loader/>}>
     <Routes>
-      <Route index path='/' element={<Navigation />}>
+      <Route path='/' element={<Navigation />}>
         <Route path='/signup' element={<Signup/>} />
         <Route path='/login' element={<Login />} />
         <Route path='/contacts' element={<Contacts />} />
       </Route>
+      <Route path='*' element={<Navigation />}/>
     </Routes>
     </Suspense>
 </>   

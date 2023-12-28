@@ -24,12 +24,15 @@ const Signup = () => {
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={schema}>
       <Form className={css.formSignup}>
         <label htmlFor="name">
+        <span className={css.astericks}>&#42;</span>Name:
           <Field type="text" name="name" required className={css.input}/>
         </label>
         <label htmlFor="email">
+        <span className={css.astericks}>&#42;</span>Email:
           <Field type="email" name="email" required className={css.input}/>
         </label>
         <label htmlFor="password">
+        <span className={css.astericks}>&#42;</span>Password:
           <Field type="password" name="password" required className={css.input}/>
         </label>
         <button type="submit">SignUp</button>
