@@ -4,13 +4,16 @@ export const NavList = styled.ul`
   list-style-type: none;
   display: flex;
   align-items: center;
-  column-gap: 20px;
+  gap: 40px 20px;
+  justify-content: start;
+  width: 100%;
+  flex-wrap: wrap;
 `;
 
 export const Header = styled.header`
   border-radius: 40px;
   background: #e0e0e0;
   box-shadow: 5px 5px 10px #b5b5b5, -5px -5px 10px #ffffff;
-  padding: 20px;
+  padding: 20px 54px 20px 20px;
   margin: 20px auto;
 `;

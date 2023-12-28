@@ -21,23 +21,27 @@ const Signup = () => {
   };
 
   return (
+    <div>
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={schema}>
       <Form className={css.formSignup}>
-        <label htmlFor="name">
+      <h2 className={css.titlePage}>Registration form</h2>
+        <label htmlFor="name" className={css.label}>
         <span className={css.astericks}>&#42;</span>Name:
           <Field type="text" name="name" required className={css.input}/>
+          <span className={css.additional}>(1 - 24) symbols</span>
         </label>
-        <label htmlFor="email">
+        <label htmlFor="email" className={css.label}>
         <span className={css.astericks}>&#42;</span>Email:
           <Field type="email" name="email" required className={css.input}/>
         </label>
-        <label htmlFor="password">
+        <label htmlFor="password" className={css.label}>
         <span className={css.astericks}>&#42;</span>Password:
           <Field type="password" name="password" required className={css.input}/>
+          <span className={css.additional}>(6 - 16) symbols</span>
         </label>
-        <button type="submit">SignUp</button>
+        <button type="submit" className={css.registerSubmit}>Register</button>
       </Form>
-    </Formik>
+    </Formik></div>
   );
 };
 
