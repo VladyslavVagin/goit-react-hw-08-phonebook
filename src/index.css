@@ -7,7 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 0 40px 0 20px;
+  padding: 0 20px;
   background-color: rgb(219, 235, 230);
   background-image: linear-gradient(rgba(188, 188, 190, 0.7), rgba(228, 229, 235, 0.7)), url(./icons/typewriter.jpg);
 }
@@ -29,7 +29,7 @@ p {
   align-items: center;
   padding: 20px 0;
   border-radius: 34px;
-  background: #ebe7e7;
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
   box-shadow: 6px 6px 10px #848181, -6px -6px 10px #ffffff;
 }
 
@@ -37,8 +37,16 @@ h1 {
   font-family: Verdana, sans-serif;
   text-shadow: 3px 3px 2px rgb(48, 47, 47);
   color: #535050;
+  text-align: center;
+  display: flex;
+  align-items: center;
 }
 
 h2 {
   color: #848181;
+}
+
+.loaderWrapper {
+  width: 100%;
+  margin: 0 auto;
 }

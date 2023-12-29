@@ -4,6 +4,9 @@ import ListOfContacts from '../../components/ListOfContacts/ListOfContacts';
 import Loader from '../../components/Loader/Loader';
 import { ToastContainer } from 'react-toastify';
 import addIcon from '../../icons/plus.png';
+import minusIcon from '../../icons/minus-sign.png';
+import searchIcon from '../../icons/search.png';
+import cancelIcon from '../../icons/forbidden.png';
 import { useState } from 'react';
 import { useGetContactsQuery } from '../../redux/contacts/contactsAPI';
 import css from './Contacts.module.css';
@@ -21,13 +24,15 @@ const Contacts = () => {
           onClick={() => setShowAddContact(!showAddContact)}
           className={css.addContact}
         >
-          {!showAddContact ? (
-            <div className={css.addContent}>
-              <img src={addIcon} alt="Icon for add button" width={20} />
-              Add contact
-            </div>
+          {' '}
+          {showAddContact ? (
+            <img
+              src={minusIcon}
+              alt="Icon for hidden add contact form"
+              width={20}
+            />
           ) : (
-            'Cancel'
+            <img src={addIcon} alt="Icon for add button" width={20} />
           )}
         </button>
         <button
@@ -35,7 +40,7 @@ const Contacts = () => {
           onClick={() => setShowSearch(!showSearch)}
           className={css.searchShowBtn}
         >
-          {showSearch ? 'Cancel search' : 'Find contact'}
+          {showSearch ?  <img src={cancelIcon} alt="Cancel search icon" width={20} /> :  <img src={searchIcon} alt="Search icon button" width={20} />}
         </button>
       </div>
       {showAddContact && (

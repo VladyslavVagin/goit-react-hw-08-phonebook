@@ -5,6 +5,7 @@ import { Suspense } from 'react';
 import styled from 'styled-components';
 import UserMenu from '../../components/UserMenu/UserMenu';
 import { useAuth } from '../../hooks/useAuth';
+import logoImage from '../../icons/notepad-117597.svg';
 
 const StyledLink = styled(NavLink)`
   text-decoration: none;
@@ -31,6 +32,9 @@ const Navigation = () => {
   return (
     <WrapperApp>
       <Header>
+        <h1>Phonebook
+          <img src={logoImage} alt='Icon with notebook' width={60}/>
+        </h1>
         <nav>
           {isLoggedIn ? (
             <UserMenu />
