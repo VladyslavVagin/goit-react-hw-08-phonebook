@@ -1,4 +1,4 @@
-@import-normalize;
+@import-normalize; /* bring in normalize.css styles */
 
 body {
   margin: 0;
@@ -44,4 +44,9 @@ h1 {
 
 h2 {
   color: #848181;
+}
+
+.loaderWrapper {
+  width: 100%;
+  margin: 0 auto;
 }
