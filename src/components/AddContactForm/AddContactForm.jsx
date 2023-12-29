@@ -16,7 +16,7 @@ const schema = yup.object().shape({
   number: yup.number().required(),
 });
 
-const AddContactForm = ({ data }) => {
+const AddContactForm = ({ data, setShowAddContact }) => {
   const [addContact, { isLoading }] = useAddContactMutation();
 
   const handleSubmit = (dataForm, { resetForm }) => {
@@ -26,6 +26,7 @@ const AddContactForm = ({ data }) => {
         name: dataForm.name,
         number: dataForm.number.replace(/(\d{3})(\d{3})(\d{3})/, '$1-$2-$3'),
       });
+      setShowAddContact(false);
       resetForm();
       toast.success('Contact was ADDED');
     } else {

@@ -3,16 +3,24 @@ import Filter from "../../components/Filter/Filter"
 import ListOfContacts from "../../components/ListOfContacts/ListOfContacts"
 import Loader from "../../components/Loader/Loader"
 import { ToastContainer } from 'react-toastify';
+import addIcon from '../../icons/plus.png';
+import { useState } from 'react';
 import { useGetContactsQuery } from '../../redux/contacts/contactsAPI';
+import css from './Contacts.module.css';
 
 
 const Contacts = () => {
     const { data, isSuccess, isLoading, isError } = useGetContactsQuery();
+    const [showAddContact, setShowAddContact] = useState(false);
+
+    
   return (
     <div className="container">
-    <AddContactForm data={data} />
+      <button type="button" onClick={() => setShowAddContact(!showAddContact)} className={css.addContact}>
+        {!showAddContact ? <div className={css.addContent}><img src={addIcon} alt="Icon for add button" width={20}/>Add contact</div> : 'Cancel'}
+      </button>
+    {showAddContact && <AddContactForm data={data} setShowAddContact={setShowAddContact}/>}
     {isLoading && <Loader />}
-    {!isLoading && !isError && data.length !== 0 && <h2>Contacts</h2>}
     {!isLoading && !isError && data.length !== 0 && <Filter />}
     {!isLoading && !isError && data.length !== 0 && (
       <ListOfContacts data={data} isSuccess={isSuccess} />

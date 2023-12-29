@@ -1,0 +1,18 @@
+.addContact {
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(145deg, #c3bfbf, #e8e3e3);
+  box-shadow: 10px 10px 20px #827f7f, -10px -10px 20px #ffffff;
+  padding: 10px 12px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #3b3b3b;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.addContent {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
