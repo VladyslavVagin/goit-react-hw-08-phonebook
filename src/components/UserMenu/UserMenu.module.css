@@ -8,6 +8,7 @@
   color: #494949;
   transition: all 400ms ease;
   outline: none;
+  cursor: pointer;
   border: none;
   &:hover {
     color: #ffffff;

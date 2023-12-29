@@ -18,6 +18,7 @@ const Contact = ({ contact }) => {
           className={css.deleteBtn}
           id={id}
           onClick={() => deleteContact(id)}
+          title='Delete contact'
         >
           {isDeleting ? <Loader/> : <img src={trashIcon} alt="trash icon" width={16} />}
         </button>
