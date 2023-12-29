@@ -24,7 +24,7 @@ const AddContactForm = ({ data }) => {
     if (!contNames.includes(dataForm.name)) {
       addContact({
         name: dataForm.name,
-        phone: dataForm.number.replace(/(\d{3})(\d{3})(\d{3})/, '$1-$2-$3'),
+        number: dataForm.number.replace(/(\d{3})(\d{3})(\d{3})/, '$1-$2-$3'),
       });
       resetForm();
       toast.success('Contact was ADDED');

@@ -4,13 +4,13 @@ import { useDeleteContactMutation } from '../../redux/contacts/contactsAPI';
 import Loader from 'components/Loader/Loader';
 
 const Contact = ({ contact }) => {
-  const { id, name, phone } = contact;
+  const { id, name, number } = contact;
   const [deleteContact, {isLoading: isDeleting} ] = useDeleteContactMutation();
 
   return (
     <tr className={css.tr}>
       <td className={css.name}>{name}</td>
-      <td className={css.phone}>{phone}</td>
+      <td className={css.phone}>{number}</td>
       <td className={css.delete}>
         {' '}
         <button
