@@ -27,8 +27,8 @@ const AddContactForm = ({ data, setShowAddContact }) => {
         number: dataForm.number.replace(/(\d{3})(\d{3})(\d{3})/, '$1-$2-$3'),
       });
       setShowAddContact(false);
+      toast.success(`Contact ${dataForm.name} was ADDED`);
       resetForm();
-      toast.success('Contact was ADDED');
     } else {
       toast.error('Contact with the same name has already exist!');
     }
