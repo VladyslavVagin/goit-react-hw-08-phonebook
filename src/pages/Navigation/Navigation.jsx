@@ -1,4 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
+import HelmetSeo from '../../components/HelmetSeo/HelmetSeo';
 import Loader from '../../components/Loader/Loader';
 import { NavList, Header, WrapperApp } from './Navigation.styled';
 import { Suspense } from 'react';
@@ -29,6 +31,8 @@ const Navigation = () => {
   const { isLoggedIn } = useAuth();
 
   return (
+    <HelmetProvider>
+      <HelmetSeo/>
     <WrapperApp>
       <Header>
         <nav>
@@ -60,6 +64,7 @@ const Navigation = () => {
         </Suspense>
       </main>
     </WrapperApp>
+    </HelmetProvider>
   );
 };
 
