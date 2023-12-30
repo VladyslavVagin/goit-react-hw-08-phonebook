@@ -4,6 +4,8 @@ import css from './Login.module.css';
 import * as yup from 'yup';
 import { logIn } from '../../redux/auth/operations';
 import { useDispatch } from 'react-redux';
+import { useAuth } from '../../hooks/useAuth';
+import Loader from '../../components/Loader/Loader';
 
 const initialValues = {
   email: '',
@@ -18,6 +20,7 @@ const schema = yup.object().shape({
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
+  const {isLoading} = useAuth();
 
   const handleSubmitLogin = (dataForm, {resetForm}) => {
       dispatch(logIn(dataForm));
@@ -49,7 +52,7 @@ const Login = () => {
           <label htmlFor='toggle' className={css.label}>
           <Field type="checkbox" name="toggle" onChange={() => setShowPassword(!showPassword)} checked={showPassword}/> {showPassword ? 'Hide password' : 'Show password'}</label>
           <button type="submit" className={css.loginSubmit}>
-           Login
+           {isLoading ? <Loader/> : 'Login'}
           </button>
         </Form>
       </Formik>
