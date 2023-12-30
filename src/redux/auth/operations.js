@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
@@ -18,8 +19,10 @@ export const register = createAsyncThunk(
     try {
       const res = await axios.post('/users/signup', credentials);
       setAuthHeader(res.data.token);
+      toast.success(`Welcome ${res.data.user.name}`);
       return res.data;
     } catch (error) {
+      toast.error('Sorry, user with this email has already exist!');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -32,8 +35,10 @@ export const logIn = createAsyncThunk(
       const res = await axios.post('/users/login', credentials);
       // After successful login, add the token to the HTTP header
       setAuthHeader(res.data.token);
+      toast.success(`Welcome ${res.data.user.name}`);
       return res.data;
     } catch (error) {
+      toast.error('Sorry, incorrect data!');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -46,6 +51,7 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     // After a successful logout, remove the token from the HTTP header
     clearAuthHeader();
   } catch (error) {
+    toast.error('Error, something went wrong!');
     return thunkAPI.rejectWithValue(error.message);
   }
 });
@@ -66,6 +72,7 @@ export const refreshUser = createAsyncThunk(
       const res = await axios.get('/users/current');
       return res.data;
     } catch (error) {
+      toast.error('Error, something went wrong!');
       return thunkAPI.rejectWithValue(error.message);
     }
   }

@@ -20,7 +20,6 @@ const Signup = () => {
   const dispatch = useDispatch();
 
   const handleSubmitRegistration = (dataForm, {resetForm}) => {
-      console.log(dataForm);
       dispatch(register(dataForm));
       resetForm();
   };
