@@ -40,10 +40,11 @@ h1 {
   text-align: center;
   display: flex;
   align-items: center;
+  margin-right: auto;
 }
 
 h2 {
-  color: #848181;
+  color: #5a5959;
 }
 
 .loaderWrapper {

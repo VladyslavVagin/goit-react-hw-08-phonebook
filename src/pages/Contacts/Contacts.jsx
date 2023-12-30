@@ -45,6 +45,7 @@ const Contacts = () => {
             <img src={addIcon} alt="Icon for add button" width={20} />
           )}
         </button>
+        {data?.length === 0 ? <h2>No contacts in phonebook</h2> :  <h2>Contacts:</h2>}
         <button
           type="button"
           onClick={() => setShowSearch(!showSearch)}

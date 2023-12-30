@@ -19,11 +19,10 @@ const StyledLink = styled(NavLink)`
   transition: all 400ms ease;
   &:hover {
     color: #ffffff;
-  };
+  }
   &.active {
     color: #ffffff;
   }
-
 `;
 
 const Navigation = () => {
@@ -32,21 +31,26 @@ const Navigation = () => {
   return (
     <WrapperApp>
       <Header>
-        <h1>Phonebook
-          <img src={logoImage} alt='Icon with notebook' width={60}/>
-        </h1>
         <nav>
           {isLoggedIn ? (
             <UserMenu />
           ) : (
-            <NavList>
-              <li>
-                <StyledLink to={'/signup'}>Register</StyledLink>
-              </li>
-              <li>
-                <StyledLink to={'/login'}>Login</StyledLink>
-              </li>
-            </NavList>
+            <>
+              <NavList>
+                <li>
+                  <h1>
+                    Phonebook
+                    <img src={logoImage} alt="Icon with notebook" width={60} />
+                  </h1>
+                </li>
+                <li>
+                  <StyledLink to={'/signup'}>Register</StyledLink>
+                </li>
+                <li>
+                  <StyledLink to={'/login'}>Login</StyledLink>
+                </li>
+              </NavList>
+            </>
           )}
         </nav>
       </Header>
