@@ -34,11 +34,12 @@ export const contactsAPI = createApi({
       invalidatesTags: ['Contact'],
     }),
     changeContact: builder.mutation({
-      query: (contactId, dataContact) => ({
-        url: `/contacts/${contactId}`,
+      query: ({id, ...data}) => ({
+        url: `/contacts/${id}`,
         method: 'PATCH',
-        body: dataContact,
+        body: data,
       }),
+      invalidatesTags: ['Contact'],
     }),
   }),
 });
