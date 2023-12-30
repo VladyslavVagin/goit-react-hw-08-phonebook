@@ -39,7 +39,8 @@
     font-family: sans-serif;
   }
   .delete {
-    max-width: 40px;
+    max-width: 62px;
+    min-width: 62px;
   }
   
   @media screen and (max-width: 370px) {
