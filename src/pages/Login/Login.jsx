@@ -1,4 +1,5 @@
 import { Formik, Form, Field } from 'formik';
+import { useState } from 'react';
 import css from './Login.module.css';
 import * as yup from 'yup';
 import { logIn } from '../../redux/auth/operations';
@@ -15,6 +16,7 @@ const schema = yup.object().shape({
 });
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
   const dispatch = useDispatch();
 
   const handleSubmitLogin = (dataForm, {resetForm}) => {
@@ -38,12 +40,14 @@ const Login = () => {
           <label htmlFor="password" className={css.label}>
             <span className={css.astericks}>&#42;</span>Password:
             <Field
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               name="password"
               required
               className={css.input}
             />
           </label>
+          <label htmlFor='toggle' className={css.label}>
+          <Field type="checkbox" name="toggle" onChange={() => setShowPassword(!showPassword)} checked={showPassword}/> {showPassword ? 'Hide password' : 'Show password'}</label>
           <button type="submit" className={css.loginSubmit}>
            Login
           </button>

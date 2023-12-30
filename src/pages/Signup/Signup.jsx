@@ -1,5 +1,6 @@
 import { Formik, Form, Field } from 'formik';
 import css from './Signup.module.css';
+import { useState } from 'react';
 import * as yup from 'yup';
 import { register } from '../../redux/auth/operations';
 import { useDispatch } from 'react-redux';
@@ -18,10 +19,11 @@ const schema = yup.object().shape({
 
 const Signup = () => {
   const dispatch = useDispatch();
+  const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmitRegistration = (dataForm, {resetForm}) => {
-      dispatch(register(dataForm));
-      resetForm();
+  const handleSubmitRegistration = (dataForm, { resetForm }) => {
+    dispatch(register(dataForm));
+    resetForm();
   };
 
   return (
@@ -45,12 +47,21 @@ const Signup = () => {
           <label htmlFor="password" className={css.label}>
             <span className={css.astericks}>&#42;</span>Password:
             <Field
-              type="password"
+              type={showPassword ? 'text' : 'password'}
               name="password"
               required
               className={css.input}
             />
             <span className={css.additional}>(6 - 16) symbols</span>
+          </label>
+          <label htmlFor="toggle" className={css.label}>
+            <Field
+              type="checkbox"
+              name="toggle"
+              onChange={() => setShowPassword(!showPassword)}
+              checked={showPassword}
+            />{' '}
+            {showPassword ? 'Hide password' : 'Show password'}
           </label>
           <button type="submit" className={css.registerSubmit}>
             Register

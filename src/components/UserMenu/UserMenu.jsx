@@ -3,11 +3,12 @@ import { logOut } from '../../redux/auth/operations';
 import { useAuth } from '../../hooks/useAuth';
 import css from './UserMenu.module.css';
 import { NavLink, useLocation } from 'react-router-dom';
+import Loader from '../../components/Loader/Loader';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
   const location = useLocation();
-  const { user } = useAuth();
+  const { user, isLoading } = useAuth();
 
   return (
     <>
@@ -19,7 +20,7 @@ const UserMenu = () => {
           onClick={() => dispatch(logOut())}
           className={css.logout}
         >
-          LogOut
+          {isLoading ? <Loader/> : 'Logout'}
         </button>
       </div>
     </div>

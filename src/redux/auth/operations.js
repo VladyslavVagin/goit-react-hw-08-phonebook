@@ -22,7 +22,6 @@ export const register = createAsyncThunk(
       toast.success(`Welcome ${res.data.user.name}`);
       return res.data;
     } catch (error) {
-      toast.error('Sorry, user with this email has already exist!');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -38,7 +37,6 @@ export const logIn = createAsyncThunk(
       toast.success(`Welcome ${res.data.user.name}`);
       return res.data;
     } catch (error) {
-      toast.error('Sorry, incorrect data!');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
