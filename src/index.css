@@ -7,7 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 0 20px;
+  padding: 0 14px;
   background-color: rgb(219, 235, 230);
   background-image: linear-gradient(
       rgba(188, 188, 190, 0.7),
