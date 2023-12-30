@@ -52,12 +52,13 @@
   font-family: 'Lato', sans-serif;
   font-weight: 700;
   background: transparent;
+  text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
   border-radius: 103px;
-  background: #b0b0b0;
+  background: #e4e1e1;
   box-shadow: 9px 9px 18px #6a6767;
   border: none;
   margin-top: 16px;

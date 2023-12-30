@@ -1,10 +1,12 @@
 .deleteBtn {
     cursor: pointer;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin: 0;
     outline: none;
     overflow: visible;
-    padding: 4px 6px;
+    padding: 6px;
     touch-action: manipulation;
     transition: all 400ms ease;
     user-select: none;
@@ -25,6 +27,13 @@
     color: #313030;
   }
 
+  .deleteBtnCont {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .phone {
     font-size: 0.75rem;
     min-width: 100px;
@@ -42,10 +51,6 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 8px;
-  }
-  .delete {
-    max-width: 32px;
-    min-width: 32px;
   }
   
   @media screen and (max-width: 370px) {

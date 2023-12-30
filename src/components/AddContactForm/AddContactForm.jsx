@@ -34,7 +34,6 @@ const AddContactForm = ({ data, setShowAddContact }) => {
     }
   };
 
-
   return (
     <Formik
       validationSchema={schema}
@@ -44,7 +43,13 @@ const AddContactForm = ({ data, setShowAddContact }) => {
       <Form className={css.contactForm} autoComplete="true">
         <label className={css.label} htmlFor="name">
           <span className={css.astericks}>&#42;</span>Name:
-          <Field type="text" name="name" className={css.input} required />
+          <Field
+            type="text"
+            name="name"
+            className={css.input}
+            required
+            pattern="^[a-zA-Zа-яА-Я]+([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*$"
+          />
           <span className={css.additional}>(1 - 24) symbols</span>
           <ErrorMessage name="name" component="span" />
         </label>
@@ -61,7 +66,7 @@ const AddContactForm = ({ data, setShowAddContact }) => {
           <ErrorMessage name="number" component="span" />{' '}
         </label>
         <button className={css.addContactBtn} type="submit">
-          {isLoading ? <Loader/> : 'Add contact'}
+          {isLoading ? <Loader /> : 'Add contact'}
         </button>
       </Form>
     </Formik>
