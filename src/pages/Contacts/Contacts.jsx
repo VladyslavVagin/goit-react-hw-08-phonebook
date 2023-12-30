@@ -7,14 +7,24 @@ import addIcon from '../../icons/plus.png';
 import minusIcon from '../../icons/minus-sign.png';
 import searchIcon from '../../icons/search.png';
 import cancelIcon from '../../icons/forbidden.png';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useGetContactsQuery } from '../../redux/contacts/contactsAPI';
 import css from './Contacts.module.css';
 
 const Contacts = () => {
-  const { data, isSuccess, isLoading, isError } = useGetContactsQuery();
+  const { data, isSuccess, isLoading, isError, refetch } = useGetContactsQuery();
   const [showAddContact, setShowAddContact] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
+
+  // Get current value of token from localStorage
+  const dataTokenStorage = localStorage.getItem('persist:auth');
+  const parsedData = JSON.parse(dataTokenStorage);
+  const token = JSON.parse(parsedData.token);
+
+// If token will change - we refetch list of contacts
+ useEffect(() => {
+  refetch();
+ }, [refetch, token])
 
   return (
     <div className="container">

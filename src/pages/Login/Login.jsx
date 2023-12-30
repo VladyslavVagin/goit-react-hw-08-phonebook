@@ -18,7 +18,6 @@ const Login = () => {
   const dispatch = useDispatch();
 
   const handleSubmitLogin = (dataForm, {resetForm}) => {
-      console.log(dataForm);
       dispatch(logIn(dataForm));
       resetForm();
   };
