@@ -1,6 +1,6 @@
 .logout {
   border-radius: 24px;
-  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+  background: #b0b0b0;
   box-shadow: 9px 9px 13px #8b8b8b, -9px -9px 13px #ffffff;
   padding: 12px;
   display: flex;
@@ -39,13 +39,13 @@
   box-shadow: inset 6px 6px 10px #bababa;
   padding: 12px 20px;
   text-transform: capitalize;
-  color: #ae00ff;
+  color: #ff9900;
 }
 
 .NavLink {
   text-decoration: none;
   border-radius: 34px;
-  background: linear-gradient(145deg, #ffffff, #dddcdc);
+  background: #b0b0b0;
   box-shadow: 30px 30px 60px #626262, -30px -30px 60px #ffffff;
   padding: 8px 24px;
   text-transform: uppercase;

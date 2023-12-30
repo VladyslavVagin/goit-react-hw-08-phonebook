@@ -1,7 +1,7 @@
 .addContact {
   border: none;
   border-radius: 50px;
-  background: linear-gradient(145deg, #c3bfbf, #e8e3e3);
+  background: #b0b0b0;
   box-shadow: 10px 10px 20px #827f7f, -10px -10px 20px #ffffff;
   padding: 10px 12px;
   font-size: 0.875rem;
@@ -12,12 +12,18 @@
   display: flex;
   align-items: center;
   column-gap: 10px;
+  transition: all 400ms ease;
+}
+
+.addContact:hover, .addContact:focus {
+   transform: scale(1.1);
+   background: rgb(0, 219, 73);
 }
 
 .searchShowBtn {
   border: none;
   border-radius: 50px;
-  background: linear-gradient(145deg, #c3bfbf, #e8e3e3);
+  background: #b0b0b0;
   box-shadow: 10px 10px 20px #827f7f, -10px -10px 20px #ffffff;
   padding: 10px;
   font-size: 0.875rem;
@@ -28,6 +34,12 @@
   display: flex;
   align-items: center;
   column-gap: 10px;
+  transition: all 400ms ease;
+}
+
+.searchShowBtn:hover, .searchShowBtn:focus {
+  transform: scale(1.1);
+  background: rgb(164, 164, 255);
 }
 
 .buttons {

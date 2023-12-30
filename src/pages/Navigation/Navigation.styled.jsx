@@ -12,7 +12,8 @@ export const NavList = styled.ul`
 
 export const Header = styled.header`
   border-radius: 40px;
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
   box-shadow: 5px 5px 10px #b5b5b5, -5px -5px 10px #ffffff;
   padding: 20px 20px 20px 20px;
   margin: 20px auto;
@@ -21,4 +22,4 @@ export const Header = styled.header`
 export const WrapperApp = styled.div`
   max-width: 780px;
   margin: 0 auto;
-`
+`;

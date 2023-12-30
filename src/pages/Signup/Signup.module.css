@@ -1,13 +1,14 @@
 .formSignup {
-  width: 96%;
-  padding: 16px 16px 16px 24px;
+  width: 90%;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   row-gap: 12px;
   margin: 0 auto 20px auto;
   border-radius: 25px;
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
   box-shadow: inset 5px 5px 12px #797979, inset -5px -5px 12px #ffffff;
 }
 
@@ -32,7 +33,6 @@
   width: 100%;
   margin: 0px auto;
   color: #6a6767;
-  height: 80px;
 }
 
 .astericks {
@@ -57,7 +57,7 @@
   position: relative;
   display: inline-block;
   border-radius: 103px;
-  background: linear-gradient(145deg, #d4cfcf, #fbf6f6);
+  background: #b0b0b0;
   box-shadow: 9px 9px 18px #6a6767;
   border: none;
   margin-top: 16px;

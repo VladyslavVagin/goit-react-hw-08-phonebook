@@ -11,17 +11,17 @@ const StyledLink = styled(NavLink)`
   text-decoration: none;
   border-radius: 24px;
   background: linear-gradient(145deg, #cacaca, #f0f0f0);
-  box-shadow: 9px 9px 13px #8b8b8b, -9px -9px 13px #ffffff;
+  box-shadow: 9px 9px 13px #8b8b8b;
   padding: 8px 24px;
   text-transform: uppercase;
   font-weight: 700;
   color: #494949;
   transition: all 400ms ease;
   &:hover {
-    color: #ffffff;
+    color: #ff9100;
   }
   &.active {
-    color: #ffffff;
+    color: #ff9100;
   }
 `;
 

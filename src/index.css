@@ -9,7 +9,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   padding: 0 20px;
   background-color: rgb(219, 235, 230);
-  background-image: linear-gradient(rgba(188, 188, 190, 0.7), rgba(228, 229, 235, 0.7)), url(./icons/typewriter.jpg);
+  background-image: linear-gradient(
+      rgba(188, 188, 190, 0.7),
+      rgba(228, 229, 235, 0.7)
+    ),
+    url(./icons/typewriter.jpg);
 }
 
 code {
@@ -29,7 +33,9 @@ p {
   align-items: center;
   padding: 20px 0;
   border-radius: 34px;
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+
   box-shadow: 6px 6px 10px #848181, -6px -6px 10px #ffffff;
 }
 
