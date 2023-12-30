@@ -31,7 +31,7 @@ const UserMenu = () => {
     </div>
     {location.pathname !== '/contacts' && (
       <div className={css.linkWrapper}>
-      <NavLink to={'/contacts'} className={css.NavLink}>
+      <NavLink to={'/contacts'} className={css.NavLink} aria-label='Link for open list of contacts'>
         List of contacts
       </NavLink></div>
     )}</>

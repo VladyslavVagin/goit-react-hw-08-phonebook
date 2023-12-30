@@ -65,7 +65,7 @@ const AddContactForm = ({ data, setShowAddContact }) => {
           <span className={css.additional}>(9 - 12) numbers</span>{' '}
           <ErrorMessage name="number" component="span" />{' '}
         </label>
-        <button className={css.addContactBtn} type="submit">
+        <button className={css.addContactBtn} type="submit" title='Button for submit add contact form'>
           {isLoading ? <Loader /> : 'Add contact'}
         </button>
       </Form>

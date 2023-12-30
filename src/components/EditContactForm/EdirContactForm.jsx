@@ -12,6 +12,7 @@ const EditContactForm = ({ setNewName, setNewNumber, onClick }) => {
           className={css.input}
           onChange={e => setNewName(e.target.value)}
           pattern="^[a-zA-Zа-яА-Я]+([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*$"
+          placeholder='New name'
         />
       </td>
       <td className={css.td}>
@@ -22,10 +23,11 @@ const EditContactForm = ({ setNewName, setNewNumber, onClick }) => {
           className={css.input}
           onChange={e => setNewNumber(e.target.value.replace(/(\d{3})(\d{3})(\d{3})/, '$1-$2-$3'))}
           pattern="[0-9]{9,12}"
+          placeholder='New number'
         />
       </td>
       <td className={css.td}>
-        <button type="button" className={css.confirm} onClick={onClick}>
+        <button type="button" className={css.confirm} onClick={onClick} title='Confirm changes in contact button'>
           Confirm
         </button>
       </td>

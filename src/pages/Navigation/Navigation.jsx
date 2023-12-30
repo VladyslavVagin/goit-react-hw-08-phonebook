@@ -48,10 +48,10 @@ const Navigation = () => {
                   </h1>
                 </li>
                 <li>
-                  <StyledLink to={'/signup'}>Register</StyledLink>
+                  <StyledLink to={'/signup'} aria-label='Link for open registry form'>Register</StyledLink>
                 </li>
                 <li>
-                  <StyledLink to={'/login'}>Login</StyledLink>
+                  <StyledLink to={'/login'} aria-label='Link for open login form'>Login</StyledLink>
                 </li>
               </NavList>
             </>
