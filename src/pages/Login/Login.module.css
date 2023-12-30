@@ -51,13 +51,14 @@
   padding: 10px 25px;
   font-family: 'Lato', sans-serif;
   font-weight: 700;
+  text-transform: uppercase;
   background: transparent;
   cursor: pointer;
   transition: all 0.3s ease;
   position: relative;
   display: inline-block;
   border-radius: 103px;
-  background: #b0b0b0;
+  background: linear-gradient(145deg, #d4cfcf, #fbf6f6);
   box-shadow: 9px 9px 18px #6a6767;
   border: none;
   margin-top: 16px;
