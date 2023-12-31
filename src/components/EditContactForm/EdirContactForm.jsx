@@ -2,6 +2,8 @@ import css from './EditContactForm.module.css';
 var throttle = require('lodash.throttle');
 
 const EditContactForm = ({ setNewName, setNewNumber, onClick }) => {
+
+  // We need values from two independent inputs, that's why we use onChange function and lodash throttle library.
   const handleChangeName = throttle(e => setNewName(e.target.value), 500, {
     leading: false,
   });

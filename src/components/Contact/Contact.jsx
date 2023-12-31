@@ -19,16 +19,29 @@ const Contact = ({ contact }) => {
   const [newNumber, setNewNumber] = useState(number);
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
   const { data } = useGetContactsQuery();
-  const [changeContact, {isLoading: isChanging}] = useChangeContactMutation();
-  const contactExistName = data.some(cont => cont.name === newName & cont.id !== id || cont.number === newNumber & cont.id !== id);
+  const [changeContact, { isLoading: isChanging }] = useChangeContactMutation();
+  const contactExistName = data.some(
+    cont =>
+      (cont.name === newName) & (cont.id !== id) ||
+      (cont.number === newNumber) & (cont.id !== id)
+  );
 
   const handleEditContact = () => {
+    // So, because I put two different input in table for showing edit form near choosen contact - 
+    // all patterns in tag input no work.We can't submit two different input that are locate in different columns of table.
+    //  That's why we check these patterns in this function. 
+    // Also if user don't like change number and/or name , old value remain.
+
     setShowEditForm(false);
-    let patternNumber = /^(?:\+?\d{9,12}|0)$/;
+    let patternNumber = /^(?:\+?\d{9,14})?$/;
     let patternName = /^.{0,24}$/;
 
-    if (!contactExistName && patternNumber.test(newNumber) && patternName.test(newName)) {
-      changeContact({ id, name: newName, number: newNumber.replace(/(\d{3})(\d{3})(\d{3})/, '$1-$2-$3') });
+    if (!contactExistName && (patternNumber.test(newNumber) || number) && patternName.test(newName)) {
+      changeContact({
+        id,
+        name: newName,
+        number: newNumber.replace(/(\d{3})(\d{3})(\d{3})/, '$1-$2-$3'),
+      });
     } else {
       toast.error('Error, incorrect input or same contact exists');
     }
@@ -52,7 +65,7 @@ const Contact = ({ contact }) => {
             id={id}
             onClick={() => setShowEditForm(!showEditForm)}
             title="Edit contact"
-            aria-label='Button for show or hide edit contact form'
+            aria-label="Button for show or hide edit contact form"
           >
             {showEditForm ? (
               <img
@@ -61,29 +74,34 @@ const Contact = ({ contact }) => {
                 width={16}
               />
             ) : (
-              <img src={editIcon} alt="trash icon for delete button" width={16} />
+              <img
+                src={editIcon}
+                alt="trash icon for delete button"
+                width={16}
+              />
             )}
           </button>
-          {isChanging ? <Loader/> : `${name}`}
+          {isChanging ? <Loader /> : `${name}`}
         </td>
-        <td className={css.phone}> {isChanging ? <Loader/> : `${number}`}</td>
+        <td className={css.phone}> {isChanging ? <Loader /> : `${number}`}</td>
         <td className={css.delete}>
           {' '}
           <div className={css.deleteBtnCont}>
-          <button
-            type="button"
-            className={css.deleteBtn}
-            id={id}
-            onClick={() => deleteContact(id)}
-            title="Delete contact"
-            aria-label='Button for delete contact from list of contact'
-          >
-            {isDeleting ? (
-              <Loader />
-            ) : (
-              <img src={trashIcon} alt="trash icon" width={16} />
-            )}
-          </button></div>
+            <button
+              type="button"
+              className={css.deleteBtn}
+              id={id}
+              onClick={() => deleteContact(id)}
+              title="Delete contact"
+              aria-label="Button for delete contact from list of contact"
+            >
+              {isDeleting ? (
+                <Loader />
+              ) : (
+                <img src={trashIcon} alt="trash icon" width={16} />
+              )}
+            </button>
+          </div>
         </td>
       </tr>
     </>
