@@ -15,6 +15,10 @@
   transition: all 400ms ease;
 }
 
+.addContact:focus, .addContact:hover {
+  transform: rotate(360deg);
+}
+
 .searchShowBtn {
   border: none;
   border-radius: 50px;
@@ -30,6 +34,10 @@
   align-items: center;
   column-gap: 10px;
   transition: all 400ms ease;
+}
+
+.searchShowBtn:focus, .searchShowBtn:hover {
+  transform: rotate(360deg);
 }
 
 .buttons {

@@ -33,13 +33,13 @@
 .userName {
   font-size: 1.5rem;
   font-weight: 700;
-  color: #383636;
-  border-radius: 13px;
-  background: #ffffff;
-  box-shadow: inset 6px 6px 10px #bababa;
+  font-family: monospace;
   padding: 12px 20px;
   text-transform: capitalize;
-  color: #ff9900;
+  color: #faf5ec;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #f5af38, #ce942f);
+  box-shadow: 5px 5px 10px #9c7023, -5px -5px 10px #ffd845;
 }
 
 .NavLink {
@@ -53,10 +53,10 @@
   color: #494949;
   &:hover {
     color: #ff9900;
-  };
+  }
   &:focus {
     color: #ff9900;
-  };
+  }
 }
 
 @keyframes pulse {
