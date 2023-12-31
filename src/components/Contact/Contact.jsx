@@ -49,6 +49,7 @@ const Contact = ({ contact }) => {
             id={id}
             onClick={() => setShowEditForm(!showEditForm)}
             title="Edit contact"
+            aria-label='Button for show or hide edit contact form'
           >
             {showEditForm ? (
               <img
@@ -57,7 +58,7 @@ const Contact = ({ contact }) => {
                 width={16}
               />
             ) : (
-              <img src={editIcon} alt="trash icon" width={16} />
+              <img src={editIcon} alt="trash icon for delete button" width={16} />
             )}
           </button>
           {name}
@@ -72,6 +73,7 @@ const Contact = ({ contact }) => {
             id={id}
             onClick={() => deleteContact(id)}
             title="Delete contact"
+            aria-label='Button for delete contact from list of contact'
           >
             {isDeleting ? (
               <Loader />

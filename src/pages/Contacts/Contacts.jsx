@@ -34,6 +34,7 @@ const Contacts = () => {
           onClick={() => setShowAddContact(!showAddContact)}
           className={css.addContact}
           title='Button for show add contact form'
+          aria-label='Button for show or hide add contact form'
         >
           {' '}
           {showAddContact ? (
@@ -52,6 +53,7 @@ const Contacts = () => {
           onClick={() => setShowSearch(!showSearch)}
           className={css.searchShowBtn}
           title='Button for open edit contact form'
+          aria-label='Button for show or hide edit contact form'
         >
           {showSearch ?  <img src={cancelIcon} alt="Cancel search icon" width={20} /> :  <img src={searchIcon} alt="Search icon button" width={20} />}
         </button>

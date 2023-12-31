@@ -40,12 +40,12 @@ const Signup = () => {
           <h2 className={css.titlePage}>Registration form</h2>
           <label htmlFor="name" className={css.label}>
             <span className={css.astericks}>&#42;</span>Name:
-            <Field type="text" name="name" required className={css.input} />
+            <Field type="text" name="name" required className={css.input} aria-label="Input for type your name from 1 to 24 symbols"/>
             <span className={css.additional}>(1 - 24) symbols</span>
           </label>
           <label htmlFor="email" className={css.label}>
             <span className={css.astericks}>&#42;</span>Email:
-            <Field type="email" name="email" required className={css.input} />
+            <Field type="email" name="email" required className={css.input} aria-label="Input for type your email. After it will use for login in app."/>
           </label>
           <label htmlFor="password" className={css.label}>
             <span className={css.astericks}>&#42;</span>Password:
@@ -54,6 +54,7 @@ const Signup = () => {
               name="password"
               required
               className={css.input}
+              aria-label="Input for type your password. After it will use for login in app."
             />
             <span className={css.additional}>(6 - 16) symbols</span>
           </label>
@@ -63,11 +64,17 @@ const Signup = () => {
               name="toggle"
               onChange={() => setShowPassword(!showPassword)}
               checked={showPassword}
+              aria-label="Checkbox for show or hide your password. If checked - password will be shown."
             />{' '}
             {showPassword ? 'Hide password' : 'Show password'}
           </label>
-          <button type="submit" className={css.registerSubmit}>
-           {isLoading ? <Loader/> : 'Register'}
+          <button
+            type="submit"
+            className={css.registerSubmit}
+            aria-label="Button for submit registry form"
+            title="Confirm register user"
+          >
+            {isLoading ? <Loader /> : 'Register'}
           </button>
         </Form>
       </Formik>

@@ -24,6 +24,8 @@ const UserMenu = () => {
           type="button"
           onClick={() => dispatch(logOut())}
           className={css.logout}
+          aria-label='Button for logout from application'
+          title='Logout from app'
         >
           {isLoading ? <Loader/> : <img src={exitIcon} alt='Icon for logout button' width={24}/>}
         </button>
