@@ -24,8 +24,11 @@ const Contact = ({ contact }) => {
 
   const handleEditContact = () => {
     setShowEditForm(false);
-    if (!contactExistName && newName.trim() !== '' && newNumber.trim() !== '') {
-      changeContact({ id, name: newName, number: newNumber });
+    let patternNumber = /^(?:\+?\d{9,12}|0)$/;
+    let patternName = /^.{0,24}$/;
+
+    if (!contactExistName && patternNumber.test(newNumber) && patternName.test(newName)) {
+      changeContact({ id, name: newName, number: newNumber.replace(/(\d{3})(\d{3})(\d{3})/, '$1-$2-$3') });
     } else {
       toast.error('Error, incorrect input or same contact exists');
     }
