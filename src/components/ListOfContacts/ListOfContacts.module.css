@@ -1,4 +1,3 @@
-
 .tableContainer {
   width: 100%;
   margin: 0 auto;
@@ -26,10 +25,16 @@
 }
 
 .tbody {
-  background-color: #d8d6d6;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+
   padding: 16px 0;
   border-radius: 0px;
-  background: #e0e0e0;
   box-shadow: inset 5px 5px 3px #cacaca, inset -5px -5px 3px #f6f6f6;
 }
 
