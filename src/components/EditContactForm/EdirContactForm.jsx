@@ -2,6 +2,7 @@ import React from 'react';
 import css from './EditContactForm.module.css';
 
 const EditContactForm = ({ setNewName, setNewNumber, onClick }) => {
+
   return (
     <tr>
       <td className={css.td}>
@@ -28,7 +29,7 @@ const EditContactForm = ({ setNewName, setNewNumber, onClick }) => {
       </td>
       <td className={css.td}>
         <button type="button" className={css.confirm} onClick={onClick} title='Confirm changes in contact button'>
-          Confirm
+          OK
         </button>
       </td>
     </tr>

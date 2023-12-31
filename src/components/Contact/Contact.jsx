@@ -24,11 +24,10 @@ const Contact = ({ contact }) => {
 
   const handleEditContact = () => {
     setShowEditForm(false);
-    if (!contactExistName) {
+    if (!contactExistName && newName.trim() !== '' && newNumber.trim() !== '') {
       changeContact({ id, name: newName, number: newNumber });
-      toast.success('Contact was changed successfully!');
     } else {
-      toast.error('Same contact has already exist');
+      toast.error('Error, incorrect input or same contact exists');
     }
   };
 
