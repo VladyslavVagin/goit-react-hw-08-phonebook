@@ -66,6 +66,7 @@ const Contact = ({ contact }) => {
             onClick={() => setShowEditForm(!showEditForm)}
             title="Edit contact"
             aria-label="Button for show or hide edit contact form"
+            style={{marginLeft: '10px'}}
           >
             {showEditForm ? (
               <img
