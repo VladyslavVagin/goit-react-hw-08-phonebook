@@ -19,7 +19,7 @@ const Contact = ({ contact }) => {
   const [newNumber, setNewNumber] = useState(number);
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
   const { data } = useGetContactsQuery();
-  const [changeContact] = useChangeContactMutation();
+  const [changeContact, {isLoading: isChanging}] = useChangeContactMutation();
   const contactExistName = data.some(cont => cont.name === newName & cont.id !== id || cont.number === newNumber & cont.id !== id);
 
   const handleEditContact = () => {
@@ -61,9 +61,9 @@ const Contact = ({ contact }) => {
               <img src={editIcon} alt="trash icon for delete button" width={16} />
             )}
           </button>
-          {name}
+          {isChanging ? <Loader/> : `${name}`}
         </td>
-        <td className={css.phone}>{number}</td>
+        <td className={css.phone}> {isChanging ? <Loader/> : `${number}`}</td>
         <td className={css.delete}>
           {' '}
           <div className={css.deleteBtnCont}>
