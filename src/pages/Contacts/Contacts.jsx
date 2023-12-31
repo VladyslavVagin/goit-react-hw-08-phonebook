@@ -53,7 +53,7 @@ const Contacts = () => {
           onClick={() => setShowSearch(!showSearch)}
           className={css.searchShowBtn}
           title='Button for open edit contact form'
-          aria-label='Button for show or hide edit contact form'
+          aria-label='Button for show or hide input for search contact'
         >
           {showSearch ?  <img src={cancelIcon} alt="Cancel search icon" width={20} /> :  <img src={searchIcon} alt="Search icon button" width={20} />}
         </button>
