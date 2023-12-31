@@ -52,4 +52,14 @@ h2 {
   color: #5a5959;
   padding-left: 16px;
 }
+.loadergeneral {
+ display: inline-block;
+ margin: 0 auto;
+}
 
+.loaderGen {
+  min-width: 100vh;
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}

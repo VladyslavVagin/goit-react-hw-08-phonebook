@@ -1,11 +1,11 @@
 import { Routes, Route } from 'react-router-dom';
-import Loader from './Loader/Loader';
 import { lazy, Suspense, useEffect } from 'react';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
 import { useDispatch } from 'react-redux';
 import { useAuth } from '../hooks/useAuth';
 import { refreshUser } from '../redux/auth/operations';
+import LoaderGeneral from './LoaderGeneral/LoaderGeneral';
 
 const Signup = lazy(() => import('pages/Signup/Signup'));
 const Login = lazy(() => import('pages/Login/Login'));
@@ -23,9 +23,9 @@ export const App = () => {
   return (
     <>
       {isRefreshing ? (
-        <Loader />
+        <LoaderGeneral/>
       ) : (
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<LoaderGeneral/>}>
           <Routes>
             <Route path="/" element={<Navigation />}>
               <Route

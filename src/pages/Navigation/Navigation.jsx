@@ -1,13 +1,13 @@
 import { NavLink, Outlet } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import HelmetSeo from '../../components/HelmetSeo/HelmetSeo';
-import Loader from '../../components/Loader/Loader';
 import { NavList, Header, WrapperApp } from './Navigation.styled';
 import { Suspense } from 'react';
 import styled from 'styled-components';
 import UserMenu from '../../components/UserMenu/UserMenu';
 import { useAuth } from '../../hooks/useAuth';
 import logoImage from '../../icons/notepad-117597.svg';
+import LoaderGeneral from 'components/LoaderGeneral/LoaderGeneral';
 
 const StyledLink = styled(NavLink)`
   text-decoration: none;
@@ -59,7 +59,7 @@ const Navigation = () => {
         </nav>
       </Header>
       <main>
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<LoaderGeneral />}>
           <Outlet />
         </Suspense>
       </main>
