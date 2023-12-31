@@ -48,7 +48,6 @@ const AddContactForm = ({ data, setShowAddContact }) => {
             name="name"
             className={css.input}
             required
-            pattern="^[a-zA-Zа-яА-Я]+([' \-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*$"
           />
           <span className={css.additional}>(1 - 24) symbols</span>
           <ErrorMessage name="name" component="span" />
