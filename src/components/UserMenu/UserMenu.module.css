@@ -45,24 +45,34 @@
 .NavLink {
   text-decoration: none;
   border-radius: 34px;
-  background: #b0b0b0;
+  background: #e9e6e6;
   box-shadow: 30px 30px 60px #626262, -30px -30px 60px #ffffff;
   padding: 8px 24px;
   text-transform: uppercase;
   font-weight: 700;
   color: #494949;
-  transition: all 400ms ease;
   &:hover {
-    background: #9c7eaa;
-    color: #ffffff;
+    color: #ff9900;
+  };
+  &:focus {
+    color: #ff9900;
+  };
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.04);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
 .linkWrapper {
   margin-top: 20px;
   margin-left: 20px;
-  transition: all 400ms ease;
-  &:hover {
-    transform: scale(1.04);
-  }
+  animation: pulse 1000ms infinite;
 }

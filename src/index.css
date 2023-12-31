@@ -45,6 +45,7 @@ h1 {
   text-align: center;
   display: flex;
   align-items: center;
+  flex-wrap: wrap-reverse;
   margin-right: auto;
 }
 
@@ -62,4 +63,21 @@ h2 {
   display: flex;
   justify-content: center;
   margin-top: 16px;
+}
+
+.defaultImage {
+  max-width: 80%;
+}
+
+.logo {
+  width: 60px;
+}
+
+.defaultTitle {
+  font-size: 20px;
+  font-family:  'Arial Narrow', Arial, sans-serif;
+  color: rgb(20, 66, 66);
+  text-align: center;
+  margin-bottom: 20px;
+  text-transform: uppercase;
 }

@@ -5,9 +5,10 @@ export const NavList = styled.ul`
   display: flex;
   align-items: center;
   gap: 40px 20px;
-  justify-content: start;
+  justify-content: flex-start;
   width: 100%;
   flex-wrap: wrap;
+  padding-left: 0;
 `;
 
 export const Header = styled.header`
