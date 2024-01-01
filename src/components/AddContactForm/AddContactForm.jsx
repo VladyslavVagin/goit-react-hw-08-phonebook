@@ -59,7 +59,7 @@ const AddContactForm = ({ data, setShowAddContact }) => {
             name="number"
             className={css.input}
             required
-            pattern="[0-9]{0,3}-?[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
+            pattern="\[0-9]{0,3}-?[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
           />
           <span className={css.additional}>(9 - 14) numbers</span>{' '}
           <ErrorMessage name="number" component="span" />{' '}
