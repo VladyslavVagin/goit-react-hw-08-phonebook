@@ -1,10 +1,9 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import css from './AddContactForm.module.css';
-import 'react-toastify/dist/ReactToastify.css';
-import { toast } from 'react-toastify';
 import { useAddContactMutation } from '../../redux/contacts/contactsAPI';
 import Loader from 'components/Loader/Loader';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const initialValues = {
   name: '',
@@ -27,10 +26,10 @@ const AddContactForm = ({ data, setShowAddContact }) => {
         number: dataForm.number.replace(/(\d{2})(\d{3})(\d{3})(\d{3})/, '$1 $2 $3 $4'),
       });
       setShowAddContact(false);
-      toast.success(`Contact ${dataForm.name} was ADDED`);
+      Notify.success(`Contact ${dataForm.name} was ADDED`)
       resetForm();
     } else {
-      toast.error('Contact with the same name has already exist!');
+      Notify.failure('Contact with the same name has already exist!')
     }
   };
 

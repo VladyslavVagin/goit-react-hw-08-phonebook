@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 axios.defaults.baseURL = 'https://connections-api.herokuapp.com';
 
@@ -19,9 +19,10 @@ export const register = createAsyncThunk(
     try {
       const res = await axios.post('/users/signup', credentials);
       setAuthHeader(res.data.token);
-      toast.success(`Welcome ${res.data.user.name}`);
+      Notify.success(`Welcome ${res.data.user.name}`);
       return res.data;
     } catch (error) {
+      Notify.failure('ERROR, Invalid data');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -34,9 +35,10 @@ export const logIn = createAsyncThunk(
       const res = await axios.post('/users/login', credentials);
       // After successful login, add the token to the HTTP header
       setAuthHeader(res.data.token);
-      toast.success(`Welcome ${res.data.user.name}`);
+      Notify.success(`Welcome ${res.data.user.name}`);
       return res.data;
     } catch (error) {
+      Notify.failure('ERROR, Invalid data');
       return thunkAPI.rejectWithValue(error.message);
     }
   }
@@ -48,6 +50,7 @@ export const logOut = createAsyncThunk('auth/logout', async (_, thunkAPI) => {
     await axios.post('/users/logout');
     clearAuthHeader();
   } catch (error) {
+    Notify.failure('Error, server not answer');
     return thunkAPI.rejectWithValue(error.message);
   }
 });
@@ -66,8 +69,10 @@ export const refreshUser = createAsyncThunk(
     try {
       setAuthHeader(persistedToken);
       const res = await axios.get('/users/current');
+      Notify.success(`Welcome ${res.data.user.name}`);
       return res.data;
     } catch (error) {
+      Notify.failure('Error, server not answer');
       return thunkAPI.rejectWithValue(error.message);
     }
   }

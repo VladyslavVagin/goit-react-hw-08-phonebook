@@ -2,13 +2,13 @@ import trashIcon from '../../icons/trash.png';
 import editIcon from '../../icons/edit-button.png';
 import cancelIcon from '../../icons/forbidden.png';
 import css from './Contact.module.css';
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import {
   useDeleteContactMutation,
   useChangeContactMutation,
   useGetContactsQuery,
 } from '../../redux/contacts/contactsAPI';
 import { useState } from 'react';
-import { toast } from 'react-toastify';
 import EditContactForm from 'components/EditContactForm/EdirContactForm';
 import Loader from 'components/Loader/Loader';
 
@@ -43,7 +43,7 @@ const Contact = ({ contact }) => {
         number: newNumber.replace(/(\d{2})(\d{3})(\d{3})(\d{3})/, '$1 $2 $3 $4'),
       });
     } else {
-      toast.error('Error, incorrect input or same contact exists');
+      Notify.failure('Error, incorrect input or same contact exists')
     }
   };
 
