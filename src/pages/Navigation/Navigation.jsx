@@ -1,4 +1,4 @@
-import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { NavLink, Outlet } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import HelmetSeo from '../../components/HelmetSeo/HelmetSeo';
 import { NavList, Header, WrapperApp } from './Navigation.styled';
@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import UserMenu from '../../components/UserMenu/UserMenu';
 import { useAuth } from '../../hooks/useAuth';
 import logoImage from '../../icons/notepad-117597.svg';
-import superHero from '../../icons/use/superhero.svg';
+import ImageDefault from 'components/ImageDefault/ImageDefault';
 import LoaderGeneral from 'components/LoaderGeneral/LoaderGeneral';
 
 const StyledLink = styled(NavLink)`
@@ -30,7 +30,6 @@ const StyledLink = styled(NavLink)`
 
 const Navigation = () => {
   const { isLoggedIn } = useAuth();
-  const location = useLocation();
 
   return (
     <HelmetProvider>
@@ -75,18 +74,7 @@ const Navigation = () => {
           </nav>
         </Header>
         <main>
-          {location.pathname !== '/contacts' &&
-            location.pathname !== '/login' &&
-            location.pathname !== '/signup' && (
-              <div>
-                <h2 className='defaultTitle'>Let's write your contacts!</h2>
-              <img
-                src={superHero}
-                alt="icon of superhero"
-                className="defaultImage"
-              />
-              </div>
-            )}
+          <ImageDefault/>
           <Suspense fallback={<LoaderGeneral />}>
             <Outlet />
           </Suspense>
