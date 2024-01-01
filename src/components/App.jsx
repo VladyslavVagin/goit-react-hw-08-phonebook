@@ -6,7 +6,6 @@ import { useDispatch } from 'react-redux';
 import { useAuth } from '../hooks/useAuth';
 import { refreshUser } from '../redux/auth/operations';
 import LoaderGeneral from './LoaderGeneral/LoaderGeneral';
-import ImageDefault from './ImageDefault/ImageDefault';
 
 const Signup = lazy(() => import('pages/Signup/Signup'));
 const Login = lazy(() => import('pages/Login/Login'));
@@ -29,7 +28,6 @@ export const App = () => {
         <Suspense fallback={<LoaderGeneral/>}>
           <Routes>
             <Route path="/" element={<Navigation />}>
-              <Route index element={<ImageDefault/>}/>
               <Route
                 path="/signup"
                 element={
