@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { lazy, Suspense, useEffect } from 'react';
 import { RestrictedRoute } from './RestrictedRoute';
 import { PrivateRoute } from './PrivateRoute';
@@ -53,7 +53,7 @@ export const App = () => {
                 }
               />
             </Route>
-            <Route path="*" element={<Navigation />} />
+            <Route path="*" element={<Navigate to="/" />} />
           </Routes>
         </Suspense>
       )}
