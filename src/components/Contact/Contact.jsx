@@ -33,14 +33,14 @@ const Contact = ({ contact }) => {
     // Also if user don't like change number and/or name , old value remain.
 
     setShowEditForm(false);
-    let patternNumber = /^(?:\+?\d{9,14})?$/;
+    let patternNumber = /[0-9]{0,3}-?[0-9]{3}-?[0-9]{3}-?[0-9]{4}/;
     let patternName = /^.{0,24}$/;
 
     if (!contactExistName && (patternNumber.test(newNumber) || number) && patternName.test(newName)) {
       changeContact({
         id,
         name: newName,
-        number: newNumber.replace(/(\d{3})(\d{3})(\d{3})/, '$1-$2-$3'),
+        number: newNumber.replace(/(\d{2})(\d{3})(\d{3})(\d{3})/, '$1 $2 $3 $4'),
       });
     } else {
       toast.error('Error, incorrect input or same contact exists');

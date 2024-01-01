@@ -24,7 +24,7 @@ const AddContactForm = ({ data, setShowAddContact }) => {
     if (!contNames.includes(dataForm.name)) {
       addContact({
         name: dataForm.name,
-        number: dataForm.number.replace(/(\d{3})(\d{3})(\d{3})/, '$1-$2-$3'),
+        number: dataForm.number.replace(/(\d{2})(\d{3})(\d{3})(\d{3})/, '$1 $2 $3 $4'),
       });
       setShowAddContact(false);
       toast.success(`Contact ${dataForm.name} was ADDED`);
@@ -59,9 +59,9 @@ const AddContactForm = ({ data, setShowAddContact }) => {
             name="number"
             className={css.input}
             required
-            pattern="[0-9]{9,12}"
+            pattern="[0-9]{0,3}-?[0-9]{3}-?[0-9]{3}-?[0-9]{4}"
           />
-          <span className={css.additional}>(9 - 12) numbers</span>{' '}
+          <span className={css.additional}>(9 - 14) numbers</span>{' '}
           <ErrorMessage name="number" component="span" />{' '}
         </label>
         <button className={css.addContactBtn} type="submit" title='Button for submit add contact form'>
