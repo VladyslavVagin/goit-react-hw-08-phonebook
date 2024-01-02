@@ -59,10 +59,19 @@ h2 {
 }
 
 .loaderGen {
-  min-width: 100vh;
+  min-width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 16px;
+  margin: 16px;
+}
+
+.loaderWrapp {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .defaultImage {

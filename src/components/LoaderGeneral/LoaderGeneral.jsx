@@ -10,7 +10,7 @@ const LoaderGeneral = () => {
         color="#d18f00"
         ariaLabel="three-circles-loading"
         wrapperStyle={{}}
-        wrapperClass=""
+        wrapperClass="loaderWrapp"
       />
     </div>
   );
