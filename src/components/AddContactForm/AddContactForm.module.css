@@ -59,13 +59,13 @@
   font-size: 0.625rem;
 }
 
-.astericks {
-  font-size: 16px;
-}
-
 .additional {
   color: #646464;
-  font-size: 0.75rem;
-  padding-left: 20px;
-  padding-right: 20px;
+  font-size: 10px;
+}
+
+@media screen and (min-width: 375px){
+  .additional {
+    padding-left: 30px;
+  }
 }
